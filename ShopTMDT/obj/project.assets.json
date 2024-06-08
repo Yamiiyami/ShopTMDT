@@ -4345,11 +4345,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Huy Vu\\Code\\Back-End\\C-Shap\\ShopQuanAoApi\\ShopTMDT\\ShopTMDT\\ShopTMDT.csproj",
+      "projectUniqueName": "C:\\Users\\Huy Vu\\Code\\GitHub-Code\\CSharp\\BaoCao-Be\\ShopTMDT\\ShopTMDT\\ShopTMDT.csproj",
       "projectName": "ShopTMDT",
-      "projectPath": "C:\\Users\\Huy Vu\\Code\\Back-End\\C-Shap\\ShopQuanAoApi\\ShopTMDT\\ShopTMDT\\ShopTMDT.csproj",
+      "projectPath": "C:\\Users\\Huy Vu\\Code\\GitHub-Code\\CSharp\\BaoCao-Be\\ShopTMDT\\ShopTMDT\\ShopTMDT.csproj",
       "packagesPath": "C:\\Users\\Huy Vu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Huy Vu\\Code\\Back-End\\C-Shap\\ShopQuanAoApi\\ShopTMDT\\ShopTMDT\\obj\\",
+      "outputPath": "C:\\Users\\Huy Vu\\Code\\GitHub-Code\\CSharp\\BaoCao-Be\\ShopTMDT\\ShopTMDT\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Huy Vu\\AppData\\Roaming\\NuGet\\NuGet.Config",

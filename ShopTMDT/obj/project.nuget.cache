@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3PDGfwBW1YB+gE16vwt33cyQPZWJXdUULNSsFvI/x2OcddUKtqx/zUr++cxp5/aiAOEcsK+5T0d8RhUf5hgRlA==",
+  "dgSpecHash": "O7kgooR88oEvT51oCE8s9pdEB5g+/a6vUdYHbCVn2a7MNbjigk5Gs0aMi5D3Ojt/pvocMmcbT2elU6V6499AXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Huy Vu\\Code\\Back-End\\C-Shap\\ShopQuanAoApi\\ShopTMDT\\ShopTMDT\\ShopTMDT.csproj",
+  "projectFilePath": "C:\\Users\\Huy Vu\\Code\\GitHub-Code\\CSharp\\BaoCao-Be\\ShopTMDT\\ShopTMDT\\ShopTMDT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Huy Vu\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Huy Vu\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using ShopTMDT.Data;
 using ShopTMDT.ViewModel;
 using SpQuanAo.services;
@@ -11,6 +12,7 @@ namespace ShopTMDT.services
         public Task<IEnumerable<HangHoaMD>> Getall();
         public Task<IEnumerable<HangHoaMD>> GetByIdCate(int id);
         public Task<HangHoaVM> GetById(int id);
+        public Task<List<HangHoaMD>> GetPage(int page, int pageSize);
         public Task<JsonResult> Edit(int id,HangHoaRequest hanghoa);
         public Task<JsonResult> Create(HangHoaRequest hanghoa,List<IFormFile> files);
         public Task<JsonResult> Remove(int id);
@@ -116,6 +118,38 @@ namespace ShopTMDT.services
                 IdKhuyenMaiNavigation = dsSanpham.IdKhuyenMaiNavigation,
                 IdLoaiHangHoaNavigation = dsSanpham.IdLoaiHangHoaNavigation,
             };
+        }
+
+        public async Task<List<HangHoaMD>> GetPage(int page , int pageSize )
+        {
+            
+            var totalCount = await _dbcontext.HangHoas.CountAsync();
+            var hanghoa = await _dbcontext.HangHoas
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(h => new HangHoaMD
+                {
+                    IdHangHoa = h.IdHangHoa,
+                    TenHangHoa = h.TenHangHoa,
+                    HinhAnh = h.HinhAnh,
+                    MauSac = h.MauSac,
+                    Size = h.Size,
+                    SoLuong = h.SoLuong,
+                    MoTa = h.MoTa,
+                    HinhAnhs = h.HinhAnhs,
+                    Gia = h.Gia,
+                    IdKhuyenMai = h.IdKhuyenMai,
+                    ThongTinDonNhaps = h.ThongTinDonNhaps,
+                    ThongTinXuats = h.ThongTinXuats,
+                    TongRating = h.TongRating,
+                    TongSao = h.TongSao,
+                    Ratings = h.Ratings,
+                    IdLoaiHangHoa = h.IdLoaiHangHoa,
+                    IdKhuyenMaiNavigation = h.IdKhuyenMaiNavigation,
+                    IdLoaiHangHoaNavigation = h.IdLoaiHangHoaNavigation,
+                })
+                .ToListAsync();
+            return hanghoa;
         }
 
         public async Task<IEnumerable<HangHoaMD>> GetByIdCate(int id)

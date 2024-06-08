@@ -1,4 +1,5 @@
-﻿using ShopTMDT.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ShopTMDT.Data;
 
 namespace ShopTMDT.ViewModel
 {
@@ -68,4 +69,5 @@ namespace ShopTMDT.ViewModel
         public int? IdLoaiHangHoa { get; set; }
 
     }
+
 }

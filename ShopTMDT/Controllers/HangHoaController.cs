@@ -21,8 +21,6 @@ namespace ShopTMDT.Controllers
         public async Task<IActionResult> GetAll()
         {
             var hanghoas = await _hangHoaRepository.Getall();
-
-
             return Ok(hanghoas);
         }
         [AllowAnonymous]
@@ -32,6 +30,14 @@ namespace ShopTMDT.Controllers
             var hanghoa = await _hangHoaRepository.GetById(id);
             return Ok(hanghoa);
         }
+        [AllowAnonymous]
+        [HttpGet("getpage")]
+        public async Task<IActionResult> GetPages(int page,int pagesize)
+        {
+            var hanghoa = await _hangHoaRepository.GetPage(page,pagesize);
+            return Ok(hanghoa);
+        }
+
         [AllowAnonymous]
         [HttpGet("GetByIdCate/{id}")]
         public async Task<IActionResult> GetByIdCate(int id)
