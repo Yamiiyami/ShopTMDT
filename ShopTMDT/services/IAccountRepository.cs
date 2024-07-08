@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualBasic;
 using Microsoft.Win32;
@@ -149,7 +150,8 @@ namespace ShopTMDT.services
         }
         public async Task<IEnumerable<UserDetailVM>> GetUsers()
         {
-            var users = await (from u in _dbcontext.Users
+
+            var users = await (from u in _dbcontext.Users where u.LockoutEnabled != false
                                select new UserDetailVM
                                {
                                    Id = u.Id,
@@ -192,7 +194,7 @@ namespace ShopTMDT.services
                         StatusCode = StatusCodes.Status404NotFound
                     };
                 }
-                _dbcontext.Remove(user);
+                user.LockoutEnabled = false;
                 await _dbcontext.SaveChangesAsync();
 
                 return new JsonResult("Xoá thành công")
